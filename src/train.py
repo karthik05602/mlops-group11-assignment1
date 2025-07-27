@@ -1,54 +1,70 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import LabelEncoder
+import argparse
 import mlflow
 import mlflow.sklearn
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, log_loss
+from sklearn.preprocessing import LabelEncoder
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from mlflow.models.signature import infer_signature
 
-# Load dataset
-df = pd.read_csv("data/iris.csv")
+def load_data(path):
+    return pd.read_csv(path)
 
-# Assume the last column is the target if not named
-target_col = "Species" if "Species" in df.columns else df.columns[-1]
+def preprocess(df):
+    le = LabelEncoder()
+    df['Species'] = le.fit_transform(df['Species'])  # Corrected from 'species'
+    return df
 
-X = df.drop(columns=[target_col])
-y = df[target_col]
-
-# Encode target
-le = LabelEncoder()
-y_encoded = le.fit_transform(y)
-
-# Split dataset
-X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.2, random_state=42)
-
-# Enable MLflow autologging (optional)
-mlflow.sklearn.autolog()
-
-# Experiment setup
-mlflow.set_experiment("iris_classification")
-best_score = 0
-best_model = None
-best_run_id = None
-
-models = {
-    "LogisticRegression": LogisticRegression(max_iter=200),
-    "RandomForest": RandomForestClassifier(n_estimators=100)
-}
-
-for name, model in models.items():
-    with mlflow.start_run(run_name=name) as run:
+def train_and_log_model(model, model_name, X_train, X_test, y_train, y_test):
+    with mlflow.start_run(run_name=model_name):
         model.fit(X_train, y_train)
-        preds = model.predict(X_test)
-        acc = accuracy_score(y_test, preds)
 
-        mlflow.log_metric("accuracy", acc)
-        mlflow.sklearn.log_model(model, name)
+        # Training metrics
+        y_pred_train = model.predict(X_train)
+        y_pred_test = model.predict(X_test)
+        y_prob_train = model.predict_proba(X_train)
 
-        if acc > best_score:
-            best_score = acc
-            best_model = model
-            best_run_id = run.info.run_id
+        mlflow.log_param("model_type", model_name)
+        mlflow.log_metric("training_accuracy_score", accuracy_score(y_train, y_pred_train))
+        mlflow.log_metric("training_precision_score", precision_score(y_train, y_pred_train, average='macro'))
+        mlflow.log_metric("training_recall_score", recall_score(y_train, y_pred_train, average='macro'))
+        mlflow.log_metric("training_f1_score", f1_score(y_train, y_pred_train, average='macro'))
+        mlflow.log_metric("training_log_loss", log_loss(y_train, y_prob_train))
 
-print(f"Best model logged under run ID: {best_run_id}")
+        # Inference metrics (optional)
+        mlflow.log_metric("accuracy", accuracy_score(y_test, y_pred_test))
+
+        # Register the model only for RandomForest
+        if model_name == "RandomForest":
+            signature = infer_signature(X_train, model.predict(X_train))
+            mlflow.sklearn.log_model(
+                sk_model=model,
+                artifact_path="model",
+                registered_model_name="iris_randomforest_model",
+                signature=signature
+            )
+        else:
+            mlflow.sklearn.log_model(model, "model")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", default="data/Iris.csv", help="Path to input dataset")
+    args = parser.parse_args()
+
+    df = load_data(args.input)
+    df = preprocess(df)
+
+    X = df.drop("Species", axis=1)
+    y = df["Species"]
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # Train Logistic Regression
+    logreg = LogisticRegression(max_iter=200)
+    train_and_log_model(logreg, "LogisticRegression", X_train, X_test, y_train, y_test)
+
+    # Train Random Forest
+    rf = RandomForestClassifier(n_estimators=100, random_state=42)
+    train_and_log_model(rf, "RandomForest", X_train, X_test, y_train, y_test)
