@@ -3,8 +3,8 @@ import joblib
 import pandas as pd
 
 app = Flask(__name__)
-model = joblib.load('app/model.pkl')
-label_encoder = joblib.load('app/label_encoder.pkl')  # Load the encoder
+model = joblib.load('model.pkl')
+label_encoder = joblib.load('label_encoder.pkl')  # Load the encoder
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -15,4 +15,4 @@ def predict():
     return jsonify({'prediction': predicted_label})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
