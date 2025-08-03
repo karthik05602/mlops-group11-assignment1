@@ -34,7 +34,23 @@ podman push docker.io/2023ac05602/iris-api:latest
 ## 4. Run the Container Locally
 
 ```bash
-podman run -d -p 5000:5000 --name iris-api-container 2023ac05602/iris-api:latest
+Run the script deploy_local.sh
+./deploy.local.sh
+```
+
+Test the API with:
+
+```bash
+curl -X POST http://localhost:5000/predict \
+  -H "Content-Type: application/json" \
+  -d '{"SepalLengthCm": 5.1, "SepalWidthCm": 3.5, "PetalLengthCm": 1.4, "PetalWidthCm": 0.2}'
+```
+
+## 5. Restart the container
+
+```bash
+Run the script deploy_local.sh
+./restart.sh
 ```
 
 Test the API with:
