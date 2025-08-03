@@ -2,24 +2,30 @@
 
 IMAGE="2023ac05602/iris-api:latest"
 CONTAINER_NAME="iris-api-container"
-HOST_LOG_DIR="./logs"
+HOST_LOG_DIR="./app/logs"
 CONTAINER_LOG_DIR="/app/logs"
 
-# Ensure log directory exists
-mkdir -p $HOST_LOG_DIR
-
-# Stop and remove any existing container
+# Stop and remove existing container
 podman stop $CONTAINER_NAME 2>/dev/null && podman rm $CONTAINER_NAME 2>/dev/null
 
-# Pull the latest image from Docker Hub
-podman pull $IMAGE
+# Ensure local log directory exists
+mkdir -p $HOST_LOG_DIR
 
-# Run the container with log directory mounted
+# Build the latest Docker image
+echo "Building Docker image"
+podman build -t $IMAGE .
+
+# Pull the latest image from Docker Hub (optional if pushing from another machine)
+# podman pull $IMAGE
+
+# Run container with volume mount for logs
+echo " Starting container..."
 podman run -d \
   -p 5000:5000 \
   --name $CONTAINER_NAME \
-  -v "$HOST_LOG_DIR:$CONTAINER_LOG_DIR" \
+  -v "$(pwd)/app/logs":$CONTAINER_LOG_DIR \
   $IMAGE
 
-echo "🚀 API is now running at http://localhost:5000"
-echo "📄 Logs will be written to $HOST_LOG_DIR/iris_api.log"
+echo "Container '$CONTAINER_NAME' is running."
+echo "API available at: http://localhost:5000"
+echo "Logs will be written to: $HOST_LOG_DIR/iris_api.log"

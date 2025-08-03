@@ -1,0 +1,142 @@
+2025-08-03 09:49:05,247 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.17:5000
+2025-08-03 09:49:05,248 - [33mPress CTRL+C to quit[0m
+2025-08-03 09:49:05,248 -  * Restarting with stat
+2025-08-03 09:49:05,632 -  * Debugger is active!
+2025-08-03 09:49:05,633 -  * Debugger PIN: 596-009-509
+2025-08-03 09:49:13,732 - Input: {'SepalLengthCm': 5.1, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 09:49:13,733 - 192.168.127.1 - - [03/Aug/2025 09:49:13] "POST /predict HTTP/1.1" 200 -
+2025-08-03 09:50:47,630 - Input: {'SepalLengthCm': 5.1, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 09:50:47,632 - 192.168.127.1 - - [03/Aug/2025 09:50:47] "POST /predict HTTP/1.1" 200 -
+2025-08-03 09:51:52,266 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 09:51:52,266 - 192.168.127.1 - - [03/Aug/2025 09:51:52] "POST /predict HTTP/1.1" 200 -
+2025-08-03 09:58:44,354 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.19:5000
+2025-08-03 09:58:44,354 - [33mPress CTRL+C to quit[0m
+2025-08-03 09:58:44,354 -  * Restarting with stat
+2025-08-03 09:58:44,759 -  * Debugger is active!
+2025-08-03 09:58:44,759 -  * Debugger PIN: 140-561-527
+2025-08-03 09:58:48,133 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 09:58:48,134 - 192.168.127.1 - - [03/Aug/2025 09:58:48] "POST /predict HTTP/1.1" 200 -
+2025-08-03 09:59:12,646 - 192.168.127.1 - - [03/Aug/2025 09:59:12] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 09:59:45,421 - 192.168.127.1 - - [03/Aug/2025 09:59:45] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 10:02:59,132 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.21:5000
+2025-08-03 10:02:59,132 - [33mPress CTRL+C to quit[0m
+2025-08-03 10:02:59,132 -  * Restarting with stat
+2025-08-03 10:02:59,509 -  * Debugger is active!
+2025-08-03 10:02:59,509 -  * Debugger PIN: 152-714-789
+2025-08-03 10:03:05,352 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 10:03:05,353 - 192.168.127.1 - - [03/Aug/2025 10:03:05] "POST /predict HTTP/1.1" 200 -
+2025-08-03 10:03:07,325 - 192.168.127.1 - - [03/Aug/2025 10:03:07] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 10:03:14,688 - 192.168.127.1 - - [03/Aug/2025 10:03:14] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 10:06:16,198 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.22:5000
+2025-08-03 10:06:16,198 - [33mPress CTRL+C to quit[0m
+2025-08-03 10:06:16,198 -  * Restarting with stat
+2025-08-03 10:06:16,581 -  * Debugger is active!
+2025-08-03 10:06:16,582 -  * Debugger PIN: 968-790-215
+2025-08-03 10:06:24,653 - 192.168.127.1 - - [03/Aug/2025 10:06:24] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 10:06:27,222 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 10:06:27,222 - 192.168.127.1 - - [03/Aug/2025 10:06:27] "POST /predict HTTP/1.1" 200 -
+2025-08-03 10:24:10,055 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.25:5000
+2025-08-03 10:24:10,056 - [33mPress CTRL+C to quit[0m
+2025-08-03 10:24:10,056 -  * Restarting with stat
+2025-08-03 10:24:10,425 -  * Debugger is active!
+2025-08-03 10:24:10,426 -  * Debugger PIN: 121-645-084
+2025-08-03 10:24:12,205 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 10:24:12,206 - 192.168.127.1 - - [03/Aug/2025 10:24:12] "POST /predict HTTP/1.1" 200 -
+2025-08-03 10:24:18,869 - 192.168.127.1 - - [03/Aug/2025 10:24:18] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 10:24:33,889 - 192.168.127.1 - - [03/Aug/2025 10:24:33] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 10:34:16,023 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.26:5000
+2025-08-03 10:34:16,023 - [33mPress CTRL+C to quit[0m
+2025-08-03 10:34:16,023 -  * Restarting with stat
+2025-08-03 10:34:16,410 -  * Debugger is active!
+2025-08-03 10:34:16,410 -  * Debugger PIN: 120-288-267
+2025-08-03 10:34:19,340 - 192.168.127.1 - - [03/Aug/2025 10:34:19] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 10:34:21,420 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 10:34:21,421 - 192.168.127.1 - - [03/Aug/2025 10:34:21] "POST /predict HTTP/1.1" 200 -
+2025-08-03 11:03:53,972 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.27:5000
+2025-08-03 11:03:53,972 - [33mPress CTRL+C to quit[0m
+2025-08-03 11:03:53,972 -  * Restarting with stat
+2025-08-03 11:03:54,417 -  * Debugger is active!
+2025-08-03 11:03:54,417 -  * Debugger PIN: 832-562-894
+2025-08-03 11:04:01,308 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 11:04:01,308 - 192.168.127.1 - - [03/Aug/2025 11:04:01] "POST /predict HTTP/1.1" 200 -
+2025-08-03 11:09:16,281 - 192.168.127.1 - - [03/Aug/2025 11:09:16] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 11:13:29,359 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.28:5000
+2025-08-03 11:13:29,360 - [33mPress CTRL+C to quit[0m
+2025-08-03 11:13:29,361 -  * Restarting with stat
+2025-08-03 11:13:29,802 -  * Debugger is active!
+2025-08-03 11:13:29,803 -  * Debugger PIN: 133-871-415
+2025-08-03 11:13:38,962 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 11:13:38,963 - 192.168.127.1 - - [03/Aug/2025 11:13:38] "POST /predict HTTP/1.1" 200 -
+2025-08-03 11:13:44,324 - 192.168.127.1 - - [03/Aug/2025 11:13:44] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 11:16:11,667 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.29:5000
+2025-08-03 11:16:11,668 - [33mPress CTRL+C to quit[0m
+2025-08-03 11:16:11,668 -  * Restarting with stat
+2025-08-03 11:16:12,145 -  * Debugger is active!
+2025-08-03 11:16:12,145 -  * Debugger PIN: 906-189-466
+2025-08-03 11:16:14,597 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 11:16:14,598 - 192.168.127.1 - - [03/Aug/2025 11:16:14] "POST /predict HTTP/1.1" 200 -
+2025-08-03 11:16:17,272 - 192.168.127.1 - - [03/Aug/2025 11:16:17] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 11:16:54,241 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.30:5000
+2025-08-03 11:16:54,241 - [33mPress CTRL+C to quit[0m
+2025-08-03 11:16:54,242 -  * Restarting with stat
+2025-08-03 11:16:54,620 -  * Debugger is active!
+2025-08-03 11:16:54,620 -  * Debugger PIN: 131-522-743
+2025-08-03 11:16:59,315 - 192.168.127.1 - - [03/Aug/2025 11:16:59] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 11:32:27,887 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.39:5000
+2025-08-03 11:32:27,887 - [33mPress CTRL+C to quit[0m
+2025-08-03 11:32:27,887 -  * Restarting with stat
+2025-08-03 11:32:28,301 -  * Debugger is active!
+2025-08-03 11:32:28,301 -  * Debugger PIN: 903-371-425
+2025-08-03 11:32:31,308 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 11:32:31,309 - 192.168.127.1 - - [03/Aug/2025 11:32:31] "POST /predict HTTP/1.1" 200 -
+2025-08-03 11:32:41,166 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 11:32:41,167 - 192.168.127.1 - - [03/Aug/2025 11:32:41] "POST /predict HTTP/1.1" 200 -
+2025-08-03 11:32:41,728 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 11:32:41,729 - 192.168.127.1 - - [03/Aug/2025 11:32:41] "POST /predict HTTP/1.1" 200 -
+2025-08-03 11:32:42,126 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 11:32:42,127 - 192.168.127.1 - - [03/Aug/2025 11:32:42] "POST /predict HTTP/1.1" 200 -
+2025-08-03 11:32:49,219 - 192.168.127.1 - - [03/Aug/2025 11:32:49] "[33mGET /metrics HTTP/1.1[0m" 404 -
+2025-08-03 11:36:28,455 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.88.0.42:5000
+2025-08-03 11:36:28,457 - [33mPress CTRL+C to quit[0m
+2025-08-03 11:36:28,458 -  * Restarting with stat
+2025-08-03 11:36:28,856 -  * Debugger is active!
+2025-08-03 11:36:28,857 -  * Debugger PIN: 644-626-300
+2025-08-03 11:36:34,874 - Input: {'SepalLengthCm': 5.2, 'SepalWidthCm': 3.5, 'PetalLengthCm': 1.4, 'PetalWidthCm': 0.2} | Prediction: Iris-setosa
+2025-08-03 11:36:34,876 - 192.168.127.1 - - [03/Aug/2025 11:36:34] "POST /predict HTTP/1.1" 200 -
+2025-08-03 11:36:39,509 - 192.168.127.1 - - [03/Aug/2025 11:36:39] "[33mGET /metrics HTTP/1.1[0m" 404 -

@@ -4,10 +4,13 @@ FROM python:3.9-slim
 # Set working directory
 WORKDIR /app
 
-# Copy app files, assuming model.pkl and label_encoder.pkl are inside app/
+# Copy app files
 COPY app/ /app
 COPY app/model.pkl /app
 COPY app/label_encoder.pkl /app
+
+# Create logs directory
+RUN mkdir -p /app/logs
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt

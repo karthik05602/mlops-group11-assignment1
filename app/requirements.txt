@@ -11,6 +11,6 @@ pandas
 joblib
 scikit-learn
 prometheus-client
-prometheus_flask_exporter
+prometheus_flask_exporter==0.22.4
 pydantic
 flask-pydantic
