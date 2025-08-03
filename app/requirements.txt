@@ -5,3 +5,10 @@ joblib
 scikit-learn
 flake8
 pytest
+fastapi
+uvicorn
+pandas
+joblib
+scikit-learn
+prometheus-client
+prometheus_flask_exporter
