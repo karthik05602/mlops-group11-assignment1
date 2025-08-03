@@ -12,3 +12,5 @@ joblib
 scikit-learn
 prometheus-client
 prometheus_flask_exporter
+pydantic
+flask-pydantic
