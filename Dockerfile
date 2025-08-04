@@ -8,6 +8,8 @@ WORKDIR /app
 COPY app/ /app
 COPY app/model.pkl /app
 COPY app/label_encoder.pkl /app
+COPY src/train.py /app/train.py
+COPY data/iris-retrain.csv /data/iris-retrain.csv
 
 # Create logs directory
 RUN mkdir -p /app/logs

@@ -6,7 +6,7 @@ This guide documents the complete steps to containerize, push, and deploy the ch
 
 ## 1. Build Docker Image Using Podman
 
-```bash
+```
 cd mlops-group11-assignment1
 podman build -t 2023ac05602/iris-api:latest .
 ```
@@ -15,7 +15,7 @@ podman build -t 2023ac05602/iris-api:latest .
 
 ## 2. Login to Docker Hub via Podman
 
-```bash
+```
 podman login docker.io
 Username: 2023ac05602
 Token name: podman-mlops-token
@@ -25,7 +25,7 @@ Token name: podman-mlops-token
 
 ## 3. Push Docker Image to Docker Hub
 
-```bash
+```
 podman push docker.io/2023ac05602/iris-api:latest
 ```
 
@@ -33,14 +33,14 @@ podman push docker.io/2023ac05602/iris-api:latest
 
 ## 4. Run the Container Locally
 
-```bash
+```
 Run the script deploy_local.sh
 ./deploy.local.sh
 ```
 
 Test the API with:
 
-```bash
+```
 curl -X POST http://localhost:5000/predict \
   -H "Content-Type: application/json" \
   -d '{"SepalLengthCm": 5.1, "SepalWidthCm": 3.5, "PetalLengthCm": 1.4, "PetalWidthCm": 0.2}'
@@ -48,14 +48,14 @@ curl -X POST http://localhost:5000/predict \
 
 ## 5. Restart the container
 
-```bash
+```
 Run the script deploy_local.sh
 ./restart.sh
 ```
 
 Test the API with:
 
-```bash
+```
 curl -X POST http://localhost:5000/predict \
   -H "Content-Type: application/json" \
   -d '{"SepalLengthCm": 5.1, "SepalWidthCm": 3.5, "PetalLengthCm": 1.4, "PetalWidthCm": 0.2}'
@@ -64,6 +64,27 @@ curl -X POST http://localhost:5000/predict \
 
 ## MLFlow UI
 
-```bash
+```
 Run mlflow ui after running train.py file
+```
+
+### To activate venv in Mac
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Retraining the model
+
+```
+Use the below curl command to retrain the model for a file stored in the data folder.
+Ensure that it has the exact schema as the original iris data.
+
+
+curl --location 'http://localhost:5000/retrain' \
+--header 'Content-Type: application/json' \
+--data '{
+    "filename": "iris-retrain.csv"
+}'
+
 ```
