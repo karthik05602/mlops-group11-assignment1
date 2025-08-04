@@ -88,3 +88,32 @@ curl --location 'http://localhost:5000/retrain' \
 }'
 
 ```
+
+
+## Steps for running and deploying the container in a Windows laptop
+
+```
+cd %USERPROFILE%\projects
+git clone https://github.com/karthik05602/mlops-group11-assignment1.git
+cd mlops-group11-assignment1
+
+python -m venv .venv
+.venv\Scripts\activate
+
+pip install --upgrade pip
+
+pip install fastapi uvicorn scikit-learn pandas joblib pydantic pytest mlflow flask-pydantic  prometheus-flask-exporter asgiref
+
+pip freeze > requirements.txt
+
+pytest -q
+
+python src\train.py
+
+python -m uvicorn app.app:asgi_app --host 0.0.0.0 --port 8000 –reload
+
+curl -X POST http://127.0.0.1:8000/predict  -H "Content-Type: application/json"  -d "{ \"SepalLengthCm\":5.1, \"SepalWidthCm\":3.5, \"PetalLengthCm\":1.4, \"PetalWidthCm\":0.2 }"
+
+mlflow ui
+http://127.0.0.1:5000
+```
