@@ -60,3 +60,10 @@ curl -X POST http://localhost:5000/predict \
   -H "Content-Type: application/json" \
   -d '{"SepalLengthCm": 5.1, "SepalWidthCm": 3.5, "PetalLengthCm": 1.4, "PetalWidthCm": 0.2}'
 ```
+
+
+## MLFlow UI
+
+```bash
+Run mlflow ui after running train.py file
+```
